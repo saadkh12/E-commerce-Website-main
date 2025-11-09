@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Elegante</title>
+    <link rel="stylesheet" href="products.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">ELEGANTE</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <span class="icon">🔍</span>
+                <span class="icon">👤</span>
+                <span class="icon">❤️</span>
+                <a href="cart.html" class="icon" style="text-decoration: none;">🛒</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Shop Our Collection</h1>
+        <p>Discover premium furniture and decor for every room</p>
+    </section>
+
+    <!-- Products Section -->
+    <main class="products-wrapper">
+        <!-- Sidebar Filters -->
+        <aside class="sidebar">
+            <div class="filter-group">
+                <div class="filter-title">Categories</div>
+                <div class="filter-options">
+                    <div class="filter-option">
+                        <input type="checkbox" id="living" checked>
+                        <label for="living">Living Room</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="bedroom">
+                        <label for="bedroom">Bedroom</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="dining">
+                        <label for="dining">Dining</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="office">
+                        <label for="office">Office</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <div class="filter-title">Price Range</div>
+                <div class="price-range">
+                    <div class="price-inputs">
+                        <input type="number" placeholder="Min" value="0">
+                        <input type="number" placeholder="Max" value="5000">
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <div class="filter-title">Style</div>
+                <div class="filter-options">
+                    <div class="filter-option">
+                        <input type="checkbox" id="modern">
+                        <label for="modern">Modern</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="contemporary">
+                        <label for="contemporary">Contemporary</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="vintage">
+                        <label for="vintage">Vintage</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="minimalist">
+                        <label for="minimalist">Minimalist</label>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Products Grid -->
+        <section class="products-container">
+            <div class="products-header">
+                <h2>Showing 24 Products</h2>
+                <select class="sort-select">
+                    <option>Sort By: Featured</option>
+                    <option>Newest</option>
+                    <option>Price: Low to High</option>
+                    <option>Price: High to Low</option>
+                    <option>Best Sellers</option>
+                </select>
+            </div>
+
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <!-- <div class="product-card" >
+                    <div class="product-image">
+                        🛋️
+                        <span class="product-badge">-20%</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Sofa</div>
+                        <div class="product-name">Modern Sectional</div>
+                        <div class="product-rating">★★★★★ (45)</div>
+                        <div class="product-price">
+                            <span class="price-current">$1,299</span>
+                            <span class="price-original">$1,599</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div> -->
+                </div>
+
+                <!-- 
+                 Product 2
+                <div class="product-card">
+                    <div class="product-image">
+                        🛏️
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Bed</div>
+                        <div class="product-name">Platform Bed Frame</div>
+                        <div class="product-rating">★★★★☆ (38)</div>
+                        <div class="product-price">
+                            <span class="price-current">$899</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                 Product 3 
+                <div class="product-card">
+                    <div class="product-image">
+                        🪑
+                        <span class="product-badge">New</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Chair</div>
+                        <div class="product-name">Dining Chair Set</div>
+                        <div class="product-rating">★★★★★ (52)</div>
+                        <div class="product-price">
+                            <span class="price-current">$599</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 4 
+                <div class="product-card">
+                    <div class="product-image">
+                        📦
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Storage</div>
+                        <div class="product-name">Wooden Cabinet</div>
+                        <div class="product-rating">★★★★☆ (29)</div>
+                        <div class="product-price">
+                            <span class="price-current">$749</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 5
+                <div class="product-card">
+                    <div class="product-image">
+                        🛏️
+                        <span class="product-badge">-15%</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Mattress</div>
+                        <div class="product-name">Premium Memory Foam</div>
+                        <div class="product-rating">★★★★★ (67)</div>
+                        <div class="product-price">
+                            <span class="price-current">$1,199</span>
+                            <span class="price-original">$1,399</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 6
+                <div class="product-card">
+                    <div class="product-image">
+                        🪑
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Accent Chair</div>
+                        <div class="product-name">Velvet Lounge Chair</div>
+                        <div class="product-rating">★★★★★ (41)</div>
+                        <div class="product-price">
+                            <span class="price-current">$649</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 7 
+                <div class="product-card">
+                    <div class="product-image">
+                        🪟
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Mirror</div>
+                        <div class="product-name">Gold Frame Mirror</div>
+                        <div class="product-rating">★★★★☆ (33)</div>
+                        <div class="product-price">
+                            <span class="price-current">$299</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 8
+                <div class="product-card">
+                    <div class="product-image">
+                        🖼️
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Artwork</div>
+                        <div class="product-name">Abstract Canvas Print</div>
+                        <div class="product-rating">★★★★★ (56)</div>
+                        <div class="product-price">
+                            <span class="price-current">$449</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 9 
+                <div class="product-card">
+                    <div class="product-image">
+                        💡
+                        <span class="product-badge">-10%</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Lighting</div>
+                        <div class="product-name">Floor Lamp</div>
+                        <div class="product-rating">★★★★☆ (25)</div>
+                        <div class="product-price">
+                            <span class="price-current">$179</span>
+                            <span class="price-original">$199</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 10
+                <div class="product-card">
+                    <div class="product-image">
+                        🛋️
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Sofa</div>
+                        <div class="product-name">Leather Couch</div>
+                        <div class="product-rating">★★★★★ (78)</div>
+                        <div class="product-price">
+                            <span class="price-current">$2,499</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 11
+                <div class="product-card">
+                    <div class="product-image">
+                        📚
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Bookshelf</div>
+                        <div class="product-name">Modern Bookcase</div>
+                        <div class="product-rating">★★★★☆ (34)</div>
+                        <div class="product-price">
+                            <span class="price-current">$549</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 12
+                <div class="product-card">
+                    <div class="product-image">
+                        🪑
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Office Chair</div>
+                        <div class="product-name">Ergonomic Task Chair</div>
+                        <div class="product-rating">★★★★★ (64)</div>
+                        <div class="product-price">
+                            <span class="price-current">$399</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button>←</button>
+                <span class="active">1</span>
+                <button>2</button>
+                <button>3</button>
+                <button>→</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="products.js">
+        // // Add to Cart Button Interaction (visual only)
+        // document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+        //     btn.addEventListener('click', function () {
+        //         this.textContent = 'Added!';
+        //         this.style.background = '#6d5a47';
+        //         setTimeout(() => {
+        //             this.textContent = 'Add to Cart';
+        //             this.style.background = '#2d2d2d';
+        //         }, 1500);
+        //     });
+        // });
+    </script>
+</body>
+
+</html>
