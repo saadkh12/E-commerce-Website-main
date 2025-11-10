@@ -28,14 +28,13 @@ function fetchingProductDataFromJson() {
           <div class="product-info">
             <div class="product-category">${product.category}</div>
             <div class="product-name">${product.title}</div>
-            <div class="product-rating">⭐ ${product.rating.rate} (${
-          product.rating.count
-        })</div>
+            <div class="product-rating">⭐ ${product.rating.rate} (${product.rating.count
+          })</div>
             <div class="product-price">
               <span class="price-current">$${product.price}</span>
               <span class="price-original">$${(product.price * 1.2).toFixed(
-                2
-              )}</span>
+            2
+          )}</span>
             </div>
             <button class="add-to-cart-btn">Add to Cart</button>
           </div>
@@ -52,10 +51,10 @@ function fetchingProductDataFromJson() {
 
 // ADD TO CART FUNCTIONALITY 
 function addToCartBtnClicked() {
-//   addToCartBtn.forEach((btn) => {
-//     btn.addEventListener("click", function () {
-//     });
-//   });
+  //   addToCartBtn.forEach((btn) => {
+  //     btn.addEventListener("click", function () {
+  //     });
+  //   });
   productsGrid.addEventListener("click", function (event) {
     if (event.target.classList.contains("add-to-cart-btn")) {
       let productCard = event.target.closest(".product-card");
@@ -65,19 +64,31 @@ function addToCartBtnClicked() {
       let productImage = productCard
         .querySelector(".product-image img")
         .getAttribute("src");
+      let productRating = productCard.querySelector(".product-rating").textContent;
+      let productCategory = productCard.querySelector(".product-category").textContent;
+
       let productId = productCard.dataset.id;
       let productDetails = {
         id: productId,
         name: productName,
         price: productPrice,
         image: productImage,
+        rating: productRating,
+        category: productCategory,
+        quantity: 1,
       };
       console.log("productDetails", productDetails);
 
-      // store in localStorage
-      localStorage.setItem("addedToCart", JSON.stringify(productDetails));
-      let getItem = JSON.parse(localStorage.getItem("addedToCart"));
-      console.log("getItem", getItem);
+
+      let dynamicCart = JSON.parse(localStorage.getItem("addedToCart")) || [];
+      let existingItem = dynamicCart.find(item => item.id === productId);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        dynamicCart.push({ ...productDetails, id: productId });
+      }
+      localStorage.setItem("addedToCart", JSON.stringify(dynamicCart));
+      console.log("Updated Cart:", dynamicCart);
 
       event.target.textContent = "Added to Cart";
       setTimeout(() => {
