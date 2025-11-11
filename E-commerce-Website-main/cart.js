@@ -10,6 +10,9 @@ let cartSubtotal = document.querySelector(".item-total");
 let cartTotalAmount = document.querySelector(".summary-row.subtotal ");
 let summaryTotalAmount = document.querySelector(".summary-row.total");
 let checkoutBtn = document.querySelector(".checkout-btn");
+let promoSection = document.querySelector(".promo-section");
+let promoInput = document.querySelector(".promo-input" + " input");
+let promoApplyBtn = document.querySelector(".promo-Apply-Btn");
 
 // FUNCTION TO GET AND SET CART ITEMS FROM LOCAL STORAGE
 function getCartItems() {
@@ -168,4 +171,37 @@ function totalAmountOfItems() {
     <span>$${total.toFixed(2)}</span>`;
     if (summaryTotalAmount) summaryTotalAmount.innerHTML = `<span>Total</span> 
     <span>$${total.toFixed(2)}</span>`;
+}
+
+
+promoApplyBtn.addEventListener("click", promoCodeDiscount);
+
+// PROMO CODE DISCOUNT FUNCTION
+function promoCodeDiscount() {
+    let promoCode = promoInput.value;
+    let selectedItems = getCartItems();
+
+    if (!selectedItems || selectedItems.length === 0) {
+        summaryTotalAmount.innerHTML = `<span>Total</span><span>$0.00</span>`;
+        return;
+    }
+
+    let total = selectedItems.reduce((sum, item) => {
+        let price = parseFloat(item.price.replace("$", "")) || 0;
+        let quantity = item.quantity || 1;
+        return sum + price * quantity;
+    }, 0);
+
+    if (promoCode === "12345") {
+        let discount = total * 0.2;
+        let newTotal = total - discount;
+
+        summaryTotalAmount.innerHTML = `<span>Total after 20% discount</span><span>$${newTotal.toFixed(2)}</span>`;
+        alert("Promo code applied successfully!");
+        promoCode = "";
+        promoInput.value = "";
+    } else {
+        totalAmountOfItems();
+        alert("Invalid promo code!");
+    }
 }
