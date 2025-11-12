@@ -112,7 +112,7 @@ function addToCartBtnClicked() {
       console.log("Updated Cart:", dynamicCart);
 
       event.target.textContent = "Added to Cart";
-      pulseCartIcon()
+      pulseCartIcon();
       setTimeout(() => {
         event.target.textContent = "Add To Cart";
       }, 2000);

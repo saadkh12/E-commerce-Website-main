@@ -349,6 +349,51 @@
             color: #999;
         }
 
+
+        /* The small dot over the cart */
+        .cart-ping {
+            display: none;
+            position: absolute;
+            top: 2px;
+            right: -1px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #0ea5e9;
+        }
+
+        /* outer ping animation */
+        .cart-ping::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #38bdf8;
+            opacity: 0.6;
+            animation: ping 1s infinite;
+        }
+
+        @keyframes ping {
+            0% {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+
+            50% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+        }
+
+
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
@@ -372,46 +417,3 @@
                 flex-direction: column;
             }
         }
-
-
-
-
-
-       .cart-ping {
-  display: none; /* initially hidden */
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #0ea5e9; /* solid circle */
-}
-
-.cart-ping::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: #38bdf8; /* outer ping color */
-  opacity: 0.6;
-  animation: ping 1s infinite;
-}
-
-@keyframes ping {
-  0% {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-  50% {
-    transform: scale(1.5);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-}
