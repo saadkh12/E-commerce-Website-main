@@ -13,8 +13,6 @@ let checkoutBtn = document.querySelector(".checkout-btn");
 let promoSection = document.querySelector(".promo-section");
 let promoInput = document.querySelector(".promo-input" + " input");
 let promoApplyBtn = document.querySelector(".promo-Apply-Btn");
-// console.log("start");
-
 
 // FUNCTION TO GET AND SET CART ITEMS FROM LOCAL STORAGE
 function getCartItems() {
